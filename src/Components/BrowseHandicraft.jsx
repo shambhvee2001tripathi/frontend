@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
+
 const BrowseHandicraft = () => {
 
     const [handicraftList, setHandicraftList] = useState([]);
@@ -47,35 +48,44 @@ const BrowseHandicraft = () => {
         return handicraftList.map((handicraft) => {
             return <div className='col-md-3'>
                 <div className="card">
-                        <img className='card-img-top ' width={3500} height={250}  src={"http://localhost:5000/"+handicraft.image} alt="" />
+                    <img className='card-img-top ' width={3500} height={250} src={"http://localhost:5000/" + handicraft.image} alt="" />
                     <div className="card-body">
-                        <h1>{handicraft.title}</h1>
-                        <h3>{handicraft.category}</h3>
-                        <h3>{handicraft.type}</h3>
-                        <p>{handicraft.price}</p>
-{/* to link 1 page with another page */}
-                        <Link to={'/viewhandicraft/'+handicraft._id} className='btn btn-primary mt-3'>View More</Link>
+                        <h3>✨ {handicraft.title}</h3>
+                        <h6>✨ {handicraft.category}</h6>
+                        <h6>✨ {handicraft.type}</h6>
+                        <h6>✨ {handicraft.material}</h6>
+
+                        <h4>₹-{handicraft.price}</h4>
+                        {/* to link 1 page with another page */}
+                        <Link to={'/viewhandicraft/' + handicraft._id} className='btn btn-primary mt-3'>View More</Link>
                     </div>
-                  
+
                 </div>
             </div>
-    })
+        })
     }
 
     return (
-        <div className='vh-100 '>
+        <motion.div
+            initial={{ opacity: 0, scale: 0.01, y: '100%', x: '100%' }}//for inital animaation//rotation can also used in it
+            animate={{ opacity: 1, scale: 1, y: 0, x: 0 }}
+            transition={{ duration: 0.5, type: 'spring', damping: 15, stiffness: 100 }}
+            style={{
+                backgroundRepeat: 'no-repeat', backgroundSize: 'cover',
+                backgroundImage: 'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSsgVgQK4JXpgK493SxZmOAwRZK65a6LgwGA&usqp=CAU")'
+            }}
+            className=''>
 
             <h1>HandicraftBrowser</h1>
 
             <div className="container">
                 <div className="row">
                     {displayHandiCrafts()}
-
                 </div>
             </div>
 
 
-        </div>
+        </motion.div>
     )
 }
 

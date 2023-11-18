@@ -18,9 +18,9 @@ const Navbar = () => {
 
 
   return (
-<nav className="navbar navbar-expand-lg bg-body-tertiary">
-  <div className="container-fluid">
-    <a className="navbar-brand" href="#">
+<nav className="navbar navbar-expand-lg bg-body-tertiary" >
+  <div className="container-fluid" style={{backgroundColor:'crimson',}}>
+    <a style={{color:'white'}} className="navbar-brand" href="#">
       Navbar
     </a>
     <button
@@ -37,36 +37,36 @@ const Navbar = () => {
     <div className="collapse navbar-collapse" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="nav-item">
-          <NavLink className="nav-link" to="/">
+          <NavLink style={{color:'white'}} className="nav-link" to="/">
             Home
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/login">
+          <NavLink style={{color:'white'}} className="nav-link" to="/login">
             Login
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/signup">
+          <NavLink style={{color:'white'}} className="nav-link" to="/signup">
             Signup
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/addhandicrafts">
+          <NavLink style={{color:'white'}} className="nav-link" to="/addhandicrafts">
             AddHandicrafts
           </NavLink>
         </li>
         <li className="nav-item">
-          <NavLink className="nav-link" to="/browsehandicraft">
+          <NavLink style={{color:'white'}} className="nav-link" to="/browsehandicraft">
             BrowseHandicraft
           </NavLink>
         </li>
-        <li className="nav-item">
-          <NavLink className="nav-link" to="/viewhandicraft">
+        {/* <li className="nav-item">
+          <NavLink style={{color:'white'}} className="nav-link" to="/viewhandicraft">
             ViewHandicraft
           </NavLink>
-        </li>
-       <li className="nav-item dropdown">
+        </li> */}
+       {/* <li style={{color:'white'}} className="nav-item dropdown">
           <a
             className="nav-link dropdown-toggle"
             href="#"
@@ -97,7 +97,7 @@ const Navbar = () => {
               </a>
             </li>
           </ul>
-        </li>
+        </li> */}
         {/* { showOption() } */}
         {/* <li className="nav-item">
           <a className="nav-link disabled" aria-disabled="true">
